@@ -26,6 +26,7 @@ public class ControladorDeErros implements Cloneable
     {
         // returna true se this.qtdErr for igual a this.qtdMax,
         // ou então false, caso contrario.
+        return true; // Paulo: to colocando return para não dar erro na hora de compilar, mas pode apagar depois
     }
 
     public String toString ()
@@ -37,11 +38,13 @@ public class ControladorDeErros implements Cloneable
     {
         // verificar se this e obj possuem o mesmo conteúdo, retornando
         // true no caso afirmativo ou false no caso negativo
+        return true; // Paulo: to colocando return para não dar erro na hora de compilar, mas pode apagar depois
     }
 
     public int hashCode ()
     {
         // calcular e retornar o hashcode de this
+        return 1; // Paulo: to colocando return para não dar erro na hora de compilar, mas pode apagar depois
     }
 
     public ControladorDeErros (ControladorDeErros c) throws Exception // construtor de cópia
@@ -52,6 +55,7 @@ public class ControladorDeErros implements Cloneable
     public Object clone ()
     {
         // returnar uma cópia de this
+        return true; // Paulo: to colocando return para não dar erro na hora de compilar, mas pode apagar depois
     }
 }
 

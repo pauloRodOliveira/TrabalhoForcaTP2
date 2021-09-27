@@ -2,7 +2,7 @@ package com.company;
 import java.io.*;
 import classes.*;
 
-public class Forca
+class Forca
 {
     public static void main (String args [])
     {

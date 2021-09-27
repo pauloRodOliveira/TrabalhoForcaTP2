@@ -15,6 +15,7 @@ public class Palavra implements Comparable<Palavra>
     {
         // percorre o String this.texto, conta e retorna
         // quantas letras existem nele iguais a letra fornecida
+        return 1; // Paulo: to colocando return para não dar erro na hora de compilar, mas pode apagar depois
     }
 
     public int getPosicaoDaIezimaOcorrencia (int i, char letra) throws Exception
@@ -28,6 +29,7 @@ public class Palavra implements Comparable<Palavra>
         // e assim por diante.
         // lançar excecao caso nao encontre em this.texto
         // a Iézima aparição da letra fornecida.
+        return 1; // Paulo: to colocando return para não dar erro na hora de compilar, mas pode apagar depois
     }
 
     public int getTamanho ()
@@ -44,11 +46,13 @@ public class Palavra implements Comparable<Palavra>
     {
         // verificar se this e obj possuem o mesmo conteúdo, retornando
         // true no caso afirmativo ou false no caso negativo
+        return true; // Paulo: to colocando return para não dar erro na hora de compilar, mas pode apagar depois
     }
 
     public int hashCode ()
     {
         // calcular e retornar o hashcode de this
+        return 1; // Paulo: to colocando return para não dar erro na hora de compilar, mas pode apagar depois
     }
 
     public int compareTo (Palavra palavra)
