@@ -36,6 +36,15 @@ class ControladorDeErrosTest {
             System.err.println("Falha em utilizar o método isAtingidoMaximoDeErros.");
         }
 
+        // teste do equals
+        try{
+            ControladorDeErros teste4 = new ControladorDeErros(3);
+            ControladorDeErros referencia1 = new ControladorDeErros(3);
+            ControladorDeErros referencia2 = new ControladorDeErros(4);
+            System.out.println(teste4.equals(referencia1));
+            System.out.println(teste4.equals(referencia2));
+        }catch(Exception erro){
 
+        }
     }
 }
