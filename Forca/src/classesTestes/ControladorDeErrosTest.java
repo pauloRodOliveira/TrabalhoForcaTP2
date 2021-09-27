@@ -43,8 +43,14 @@ class ControladorDeErrosTest {
             ControladorDeErros referencia2 = new ControladorDeErros(4);
             System.out.println(teste4.equals(referencia1));
             System.out.println(teste4.equals(referencia2));
-        }catch(Exception erro){
+        }catch(Exception erro){}
 
+        //teste do clone
+        try{
+            ControladorDeErros teste5 = new ControladorDeErros(3);
+            System.out.println("Sucesso no construtor de ControladorDeErros");
+        }catch(Exception erro){
+            System.err.println("Falha no construtor de ControladorDeErros.");
         }
     }
 }

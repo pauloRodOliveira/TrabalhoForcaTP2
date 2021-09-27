@@ -64,12 +64,15 @@ public class ControladorDeErros implements Cloneable
     public ControladorDeErros (ControladorDeErros c) throws Exception // construtor de cópia
     {
         // copiar c.qtdMax e c.qtdErr, respectivamente em, this.qtdMax e this.qtdErr
+        this.qtdMax = c.qtdMax;
+        this.qtdErr = c.qtdErr;
     }
 
     public Object clone ()
     {
-        // returnar uma cópia de this
-        return true; // Paulo: to colocando return para não dar erro na hora de compilar, mas pode apagar depois
+        // retornar uma cópia de this
+        ControladorDeErros copia = this;
+        return copia;
     }
 }
 
