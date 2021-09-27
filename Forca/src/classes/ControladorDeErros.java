@@ -9,6 +9,9 @@ public class ControladorDeErros implements Cloneable
         // verifica se qtdMax fornecida não é positiva, lançando
         // uma exceção.
         // armazena qtdMax fornecida em this.qtdMax.
+        if(qtdMax < 0) throw new Exception("Quantidade de erros inválida");
+
+        this.qtdMax = qtdMax;
     }
 
     public void registreUmErro () throws Exception
@@ -16,6 +19,7 @@ public class ControladorDeErros implements Cloneable
         // verifica se this.qtdErr ja é igual a this.qtdMax,
         // lançando excecao em caso positivo ou
         // incrementando this.qtdErr em caso negativo
+
     }
 
     public boolean isAtingidoMaximoDeErros  ()
