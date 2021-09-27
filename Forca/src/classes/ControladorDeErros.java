@@ -28,7 +28,9 @@ public class ControladorDeErros implements Cloneable
     {
         // returna true se this.qtdErr for igual a this.qtdMax,
         // ou então false, caso contrario.
-        return true; // Paulo: to colocando return para não dar erro na hora de compilar, mas pode apagar depois
+        if(this.qtdErr == this.qtdMax) return true;
+
+        return false;
     }
 
     public String toString ()

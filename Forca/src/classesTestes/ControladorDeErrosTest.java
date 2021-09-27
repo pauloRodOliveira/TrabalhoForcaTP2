@@ -19,10 +19,23 @@ class ControladorDeErrosTest {
             teste2.registreUmErro(); // erros = 1
             teste2.registreUmErro(); // erros = 2
             teste2.registreUmErro(); // erros = 3
-            teste2.registreUmErro();  // erros = 4 -> erro
+            //teste2.registreUmErro();  // erros = 4 -> erro
             System.out.println("Sucesso em registrar erro.");
         }catch(Exception erro){
             System.err.println("Falha em registrar erro.");
         }
+
+        //teste do isAtingidoMaximoDeErros
+        try{
+            ControladorDeErros teste3 = new ControladorDeErros(3);
+            teste3.registreUmErro(); // erros = 1
+            teste3.registreUmErro(); // erros = 2
+            teste3.registreUmErro(); // erros = 3
+            if(teste3.isAtingidoMaximoDeErros()) System.out.println("Sucesso em utilizar o método isAtingidoMaximoDeErros.");
+        }catch(Exception erro){
+            System.err.println("Falha em utilizar o método isAtingidoMaximoDeErros.");
+        }
+
+
     }
 }
