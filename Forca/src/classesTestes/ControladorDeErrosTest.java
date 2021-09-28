@@ -48,9 +48,27 @@ class ControladorDeErrosTest {
         //teste do clone
         try{
             ControladorDeErros teste5 = new ControladorDeErros(3);
-            System.out.println("Sucesso no construtor de ControladorDeErros");
+            System.out.println(teste5.clone());
+            System.out.println("Sucesso no método clone.");
         }catch(Exception erro){
-            System.err.println("Falha no construtor de ControladorDeErros.");
+            System.err.println("Falha no método clone.");
+        }
+
+        // teste do toString
+        try{
+            ControladorDeErros teste6 = new ControladorDeErros(3);
+            System.out.println(teste6.toString());
+            System.out.println("Sucesso no método toString.");
+        }catch(Exception erro){
+            System.err.println("Falha no método toString.");
+        }
+
+        //teste do ConstrutorDeCopia
+        try{
+            ControladorDeErros teste7 = new ControladorDeErros(3);
+            System.out.println("Sucesso no método ConstrutorDeCopia.");
+        }catch(Exception erro){
+            System.err.println("Falha no método ConstrutorDeCopia.");
         }
     }
 }
