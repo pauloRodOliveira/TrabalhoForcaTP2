@@ -7,6 +7,7 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
     public ControladorDeLetrasJaDigitadas ()
     {
         // torna this.letrasJaDigitadas igual ao String vazio
+        this.letrasJaDigitadas = "";
     }
 
     public boolean isJaDigitada (char letra)
@@ -14,7 +15,16 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
         // percorrer o String this.letrasJaDigitadas e verificar se ele
         // possui a letra fornecida, retornando true em caso afirmativo
         // ou false em caso negativo
-        return true; // Paulo: to colocando return para não dar erro na hora de compilar, mas pode apagar depois
+        int tamanho = this.letrasJaDigitadas.length();
+
+        for(int aux = 0; aux <= (tamanho - 1); aux++){
+            char letraJaDigitada = this.letrasJaDigitadas.charAt(aux);
+            if(letra == letraJaDigitada){
+                return true;
+            }
+        }
+
+        return false; // Paulo: to colocando return para não dar erro na hora de compilar, mas pode apagar depois
     }
 
     public void registre (char letra) throws Exception
@@ -23,13 +33,26 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
         // o método this.isJaDigitada, para isso), lancando uma exceção
         // em caso afirmativo.
         // concatena a letra fornecida a this.letrasJaDigitadas.
+
+        if(isJaDigitada(letra)) throw new Exception("Impossível registrar, letra já digitada");
+
+        this.letrasJaDigitadas = this.letrasJaDigitadas + letra;
     }
 
     public String toString ()
     {
         // retorna um String com TODAS as letras presentes em
         // this.letrasJaDigitadas separadas por vírgula (,).
-        return ""; // Paulo: to colocando return para não dar erro na hora de compilar, mas pode apagar depois
+        int tamanho = letrasJaDigitadas.length();
+        String virgulaLetrasDigitadas = "";
+
+        for(int aux = 0; aux <= (tamanho - 1); aux++){
+            char letraJaDigitada = letrasJaDigitadas.charAt(aux);
+            if(aux < 1) virgulaLetrasDigitadas += letraJaDigitada;
+            else virgulaLetrasDigitadas += ", " + letraJaDigitada;
+        }
+
+        return virgulaLetrasDigitadas; // Paulo: to colocando return para não dar erro na hora de compilar, mas pode apagar depois
     }
 
     public boolean equals (Object obj)
