@@ -11,7 +11,6 @@ class ControladorDeLetrasJaDigitadasTest {
             System.out.println("\nTeste 1, registre");
             ControladorDeLetrasJaDigitadas teste1 = new ControladorDeLetrasJaDigitadas();
             teste1.registre('a');
-            teste1.registre('a');
             System.out.println("Sucesso no método registre");
         }catch(Exception erro){
             System.err.println("Falha no método registre, erro: " + erro);
@@ -41,8 +40,26 @@ class ControladorDeLetrasJaDigitadasTest {
             System.err.println("Falha no método toString, erro: " + erro);
         }
 
-        /*
+        //teste4
+        try{
+            System.out.println("\nTeste 4, equals");
+            ControladorDeLetrasJaDigitadas teste4 = new ControladorDeLetrasJaDigitadas();
+            ControladorDeLetrasJaDigitadas teste41 = new ControladorDeLetrasJaDigitadas();
 
+            teste4.registre('a');
+            teste41.registre('a');
+            System.out.println(teste4.equals(teste41));
+            System.out.println("Objeto 1: " + teste4 + " " + "Objeto 2: " + teste41);
+
+            teste4.registre('c');
+            teste41.registre('b');
+            System.out.println(teste4.equals(teste41));
+            System.out.println("Objeto 1: " + teste4 + " " + "Objeto 2: " + teste41);
+        }catch(Exception erro){
+            System.err.println("Falha no método equals, erro: " + erro);
+        }
+
+        /*
         try{
             System.out.println("\nTeste 1");
             ControladorDeLetrasJaDigitadas teste = new ControladorDeLetrasJaDigitadas();

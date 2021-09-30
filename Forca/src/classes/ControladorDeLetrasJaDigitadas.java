@@ -24,7 +24,7 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
             }
         }
 
-        return false; // Paulo: to colocando return para não dar erro na hora de compilar, mas pode apagar depois
+        return false;
     }
 
     public void registre (char letra) throws Exception
@@ -33,6 +33,7 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
         // o método this.isJaDigitada, para isso), lancando uma exceção
         // em caso afirmativo.
         // concatena a letra fornecida a this.letrasJaDigitadas.
+        if(letra == ' ') throw new Exception("Impossível registrar, valor nulo");
 
         if(isJaDigitada(letra)) throw new Exception("Impossível registrar, letra já digitada");
 
@@ -52,32 +53,45 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
             else virgulaLetrasDigitadas += ", " + letraJaDigitada;
         }
 
-        return virgulaLetrasDigitadas; // Paulo: to colocando return para não dar erro na hora de compilar, mas pode apagar depois
+        return virgulaLetrasDigitadas;
     }
 
     public boolean equals (Object obj)
     {
         // verificar se this e obj são iguais
-        return true; // Paulo: to colocando return para não dar erro na hora de compilar, mas pode apagar depois
+        if (this == obj) return true;
+        if(obj == null) return false;
+        ControladorDeLetrasJaDigitadas aux = (ControladorDeLetrasJaDigitadas)obj;
+
+        if(this.letrasJaDigitadas != aux.letrasJaDigitadas) return false;
+        else return true;
     }
 
     public int hashCode ()
     {
         // calcular e retornar o hashcode de this
-        return 1; // Paulo: to colocando return para não dar erro na hora de compilar, mas pode apagar depois
+        int ret = 1;
+
+        ret = 2*ret + new Integer(this.letrasJaDigitadas).hashCode();
+
+        return ret;
     }
 
-    public ControladorDeLetrasJaDigitadas(
-            ControladorDeLetrasJaDigitadas controladorDeLetrasJaDigitadas)
-            throws Exception // construtor de cópia
+    public ControladorDeLetrasJaDigitadas(ControladorDeLetrasJaDigitadas controladorDeLetrasJaDigitadas) throws Exception // construtor de cópia
     {
         // copiar c.letrasJaDigitadas em this.letrasJaDigitadas
+        ControladorDeLetrasJaDigitadas c = controladorDeLetrasJaDigitadas;
+        this.letrasJaDigitadas = c.letrasJaDigitadas;
     }
 
     public Object clone ()
     {
         // criar uma cópia do this com o construtor de cópia e retornar
-        return true; // Paulo: to colocando return para não dar erro na hora de compilar, mas pode apagar depois
+        ControladorDeLetrasJaDigitadas copia = new ControladorDeLetrasJaDigitadas();
+
+        copia.letrasJaDigitadas = this.letrasJaDigitadas;
+
+        return copia;
     }
 }
 
