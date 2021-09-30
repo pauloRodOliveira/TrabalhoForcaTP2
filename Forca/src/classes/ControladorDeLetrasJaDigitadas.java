@@ -63,7 +63,7 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
         if(obj == null) return false;
         ControladorDeLetrasJaDigitadas aux = (ControladorDeLetrasJaDigitadas)obj;
 
-        if(this.letrasJaDigitadas != aux.letrasJaDigitadas) return false;
+        if(aux.letrasJaDigitadas != this.letrasJaDigitadas) return false;
         else return true;
     }
 
