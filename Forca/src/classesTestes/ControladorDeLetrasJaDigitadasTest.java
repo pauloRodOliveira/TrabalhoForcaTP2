@@ -59,6 +59,19 @@ class ControladorDeLetrasJaDigitadasTest {
             System.err.println("Falha no método equals, erro: " + erro);
         }
 
+        // teste5
+        try{
+            System.out.println("\nTeste 5, clone");
+            ControladorDeLetrasJaDigitadas teste5 = new ControladorDeLetrasJaDigitadas();
+            teste5.registre('a');
+            ControladorDeLetrasJaDigitadas teste51 = (ControladorDeLetrasJaDigitadas) teste5.clone();
+            System.out.println(teste51);
+            teste51.registre('b');
+            System.out.println(teste5);
+        }catch(Exception erro){
+            System.err.println("Falha no método clone, erro: " + erro);
+        }
+
         /*
         try{
             System.out.println("\nTeste 1");

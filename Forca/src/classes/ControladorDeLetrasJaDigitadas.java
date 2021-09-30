@@ -59,12 +59,20 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
     public boolean equals (Object obj)
     {
         // verificar se this e obj são iguais
-        if (this == obj) return true;
-        if(obj == null) return false;
-        ControladorDeLetrasJaDigitadas aux = (ControladorDeLetrasJaDigitadas)obj;
+        boolean ver = true;
+        if(obj == null) ver = false;
 
-        if(aux.letrasJaDigitadas != this.letrasJaDigitadas) return false;
-        else return true;
+        ControladorDeLetrasJaDigitadas aux = (ControladorDeLetrasJaDigitadas) obj;
+
+        int tamanho = this.letrasJaDigitadas.length();
+
+        for(int a = 0; a <= (tamanho - 1); a++){
+            char letraJaDigitada = this.letrasJaDigitadas.charAt(a);
+            if(aux.isJaDigitada(letraJaDigitada)) ver = true;
+            else ver = false;
+        }
+
+        return ver;
     }
 
     public int hashCode ()
@@ -79,9 +87,8 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
 
     public ControladorDeLetrasJaDigitadas(ControladorDeLetrasJaDigitadas controladorDeLetrasJaDigitadas) throws Exception // construtor de cópia
     {
-        // copiar c.letrasJaDigitadas em this.letrasJaDigitadas
-        ControladorDeLetrasJaDigitadas c = controladorDeLetrasJaDigitadas;
-        this.letrasJaDigitadas = c.letrasJaDigitadas;
+        // copiar c.letrasJaDigitadas em this.letrasJaDigitada
+        this.letrasJaDigitadas = controladorDeLetrasJaDigitadas.letrasJaDigitadas;
     }
 
     public Object clone ()
