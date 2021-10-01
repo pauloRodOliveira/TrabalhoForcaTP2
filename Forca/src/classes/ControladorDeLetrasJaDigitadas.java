@@ -88,15 +88,19 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
     public ControladorDeLetrasJaDigitadas(ControladorDeLetrasJaDigitadas controladorDeLetrasJaDigitadas) throws Exception // construtor de cópia
     {
         // copiar c.letrasJaDigitadas em this.letrasJaDigitada
+        if(controladorDeLetrasJaDigitadas == null) throw new Exception("Objeto no construtor de cópia está nulo. ");
+
         this.letrasJaDigitadas = controladorDeLetrasJaDigitadas.letrasJaDigitadas;
     }
 
     public Object clone ()
     {
         // criar uma cópia do this com o construtor de cópia e retornar
-        ControladorDeLetrasJaDigitadas copia = new ControladorDeLetrasJaDigitadas();
+        ControladorDeLetrasJaDigitadas copia = null;
 
-        copia.letrasJaDigitadas = this.letrasJaDigitadas;
+        try {
+            copia = new ControladorDeLetrasJaDigitadas(this);
+        }catch (Exception erro) {System.err.println(erro);}
 
         return copia;
     }

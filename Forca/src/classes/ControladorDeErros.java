@@ -69,6 +69,8 @@ public class ControladorDeErros implements Cloneable
     public ControladorDeErros (ControladorDeErros c) throws Exception // construtor de cópia
     {
         // copiar c.qtdMax e c.qtdErr, respectivamente em, this.qtdMax e this.qtdErr
+        if(c == null) throw new Exception("Objeto dentro do construtor de copia está nulo. ");
+
         this.qtdMax = c.qtdMax;
         this.qtdErr = c.qtdErr;
     }
@@ -76,7 +78,12 @@ public class ControladorDeErros implements Cloneable
     public Object clone ()
     {
         // retornar uma cópia de this
-        ControladorDeErros copia = this;
+        ControladorDeErros copia = null;
+
+        try {
+            copia = new ControladorDeErros(this);
+        }catch (Exception erro) {System.err.println(erro);}
+
         return copia;
     }
 }
