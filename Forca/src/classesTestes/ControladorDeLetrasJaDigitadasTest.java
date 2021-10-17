@@ -5,59 +5,55 @@ import classes.ControladorDeLetrasJaDigitadas;
 
 class ControladorDeLetrasJaDigitadasTest {
     public static void main(String[] args) {
-        // teste1
-
+        /*// teste1
         try{
-            System.out.println("\nTeste 1, registre");
+            System.out.println("\nTeste 1, isDigitada");
             ControladorDeLetrasJaDigitadas teste1 = new ControladorDeLetrasJaDigitadas();
             teste1.registre('a');
-            System.out.println("Sucesso no método registre");
-        }catch(Exception erro){
-            System.err.println("Falha no método registre, erro: " + erro);
-        }
-
-        // teste2
-        try{
-            System.out.println("\nTeste 2, isDigitada");
-            ControladorDeLetrasJaDigitadas teste2 = new ControladorDeLetrasJaDigitadas();
-            teste2.registre('a');
-            System.out.println(teste2.isJaDigitada('a'));
+            System.out.println(teste1.isJaDigitada('a'));
+            System.out.println(teste1.isJaDigitada('b'));
+            teste1.registre('b');
+            System.out.println(teste1.isJaDigitada('b'));
         }catch(Exception erro){
             System.err.println("Falha no método isDigitada, erro: " + erro);
         }
 
-        //teste3
+        //teste2
         try{
-            System.out.println("\nTeste 3, ToString");
-            ControladorDeLetrasJaDigitadas teste3 = new ControladorDeLetrasJaDigitadas();
-            teste3.registre('f');
-            teste3.registre('o');
-            teste3.registre('r');
-            teste3.registre('c');
-            teste3.registre('a');
-            System.out.println(teste3);
+            System.out.println("\nTeste 2, ToString");
+            ControladorDeLetrasJaDigitadas teste2 = new ControladorDeLetrasJaDigitadas();
+            teste2.registre('f');
+            teste2.registre('o');
+            teste2.registre('r');
+            teste2.registre('c');
+            teste2.registre('a');
+            System.out.println(teste2);
+            teste2.registre('s');
+            System.out.println(teste2);
         }catch(Exception erro){
             System.err.println("Falha no método toString, erro: " + erro);
         }
 
-        //teste4
+        //teste3
         try{
-            System.out.println("\nTeste 4, equals");
-            ControladorDeLetrasJaDigitadas teste4 = new ControladorDeLetrasJaDigitadas();
-            ControladorDeLetrasJaDigitadas teste41 = new ControladorDeLetrasJaDigitadas();
+            System.out.println("\nTeste 3, equals");
+            ControladorDeLetrasJaDigitadas teste3 = new ControladorDeLetrasJaDigitadas();
+            ControladorDeLetrasJaDigitadas teste31 = new ControladorDeLetrasJaDigitadas();
 
-            teste4.registre('a');
-            teste41.registre('a');
-            System.out.println(teste4.equals(teste41));
-            System.out.println("Objeto 1: " + teste4 + " " + "Objeto 2: " + teste41);
+            teste3.registre('a');
+            teste31.registre('a');
+            System.out.println(teste3.equals(teste31)); // true
+            System.out.println("Objeto 1: " + teste3 + " " + "Objeto 2: " + teste31);
 
-            teste4.registre('c');
-            teste41.registre('b');
-            System.out.println(teste4.equals(teste41));
-            System.out.println("Objeto 1: " + teste4 + " " + "Objeto 2: " + teste41);
+            teste3.registre('c');
+            teste31.registre('b');
+            System.out.println(teste3.equals(teste31)); // false
+            System.out.println("Objeto 1: " + teste3 + " " + "Objeto 2: " + teste31);
         }catch(Exception erro){
             System.err.println("Falha no método equals, erro: " + erro);
         }
+         */
+
 
         // teste5
         try{
@@ -68,9 +64,17 @@ class ControladorDeLetrasJaDigitadasTest {
             System.out.println(teste51);
             teste51.registre('b');
             System.out.println(teste5);
+            teste51.registre('c');
+            System.out.println(teste5);
         }catch(Exception erro){
             System.err.println("Falha no método clone, erro: " + erro);
         }
+
+
+        /*
+
+
+
 
         /*
         try{
